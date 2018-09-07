@@ -19,7 +19,7 @@
     "test": "react-scripts-parcel test --env=jsdom",
     "eject": "react-scripts-parcel eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "development": [
