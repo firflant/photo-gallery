@@ -35,8 +35,7 @@ class Gallery extends Component {
 
   render(){
     const {photos, loading, error} = this.props;
-    const {showModal, activeIndex} = this.state;
-    console.log('TCL: Gallery -> render -> this.state', this.state);
+    const {showModal, activeIndex} = this.state
     return(
       <div className="gallery">
         {loading ?
@@ -75,6 +74,7 @@ class Gallery extends Component {
               activeIndex={activeIndex}
               next={this.next}
               previous={this.previous}
+              className="carousel-interesting-animation"
             >
               {photos.map((item, index) => (
                 <CarouselItem

@@ -14,17 +14,56 @@
 .gallery__item
   cursor: pointer
   margin-bottom: $spacer
+  &:hover
+    .gallery__thumbnail
+      box-shadow: 0 3px 5px $gray-500
+      transform: scale(1.05)
+      filter: contrast(150%)
+    .gallery__title
+      transform: translateY(5px)
+      color: $gray-900
 
 .gallery__thumbnail
   margin: 0 auto $spacer / 2
   display: block
+  transition: .3s all
 
 .gallery__title
   text-align: center
   margin: 0 auto
   max-width: 150px
   font-size: $font-size-sm
-  color: $gray-700
+  color: $gray-600
+  transition: .3s all
 
 .gallery__fullimage
   width: 100%
+
+// Modifiers
+// --------------------------------------------------
+.carousel-interesting-animation
+  .carousel-item
+    opacity: 0
+    transition:
+      duration: .6s
+      property: all
+
+  .carousel-item.active,
+  .carousel-item-next.carousel-item-left,
+  .carousel-item-prev.carousel-item-right,
+    opacity: 1
+    transform: scale(0.5, 0.25) rotate(33deg)
+
+  .active.carousel-item-left,
+  .active.carousel-item-right
+    opacity: 0
+
+  .carousel-item-next,
+  .carousel-item-prev,
+  .carousel-item.active,
+  .active.carousel-item-left,
+  .active.carousel-item-prev
+    transform: translateX(0)
+
+    @supports (transform-style: preserve-3d)
+      transform: translate3d(0, 0, 0)
