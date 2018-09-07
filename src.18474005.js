@@ -12107,7 +12107,6 @@ var Gallery = function (_Component) {
           showModal = _state.showModal,
           activeIndex = _state.activeIndex;
 
-      console.log('TCL: Gallery -> render -> this.state', this.state);
       return _react2.default.createElement(
         'div',
         { className: 'gallery' },
@@ -12166,7 +12165,8 @@ var Gallery = function (_Component) {
               {
                 activeIndex: activeIndex,
                 next: this.next,
-                previous: this.previous
+                previous: this.previous,
+                className: 'carousel-interesting-animation'
               },
               photos.map(function (item, index) {
                 return _react2.default.createElement(
@@ -12516,4 +12516,4 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 },{"react":"1n8/","react-dom":"NKHc","./App":"eBcb","./serviceWorker":"Yw6x"}]},{},["2u/B"], null)
-//# sourceMappingURL=/photo-gallery/src.24c213ef.map
+//# sourceMappingURL=/photo-gallery/src.9b80cd34.map

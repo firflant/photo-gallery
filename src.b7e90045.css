@@ -12631,17 +12631,55 @@ a.text-dark:hover, a.text-dark:focus {
 .gallery__item {
   cursor: pointer;
   margin-bottom: 1rem; }
+  .gallery__item:hover .gallery__thumbnail {
+    box-shadow: 0 3px 5px #adb5bd;
+    transform: scale(1.05);
+    filter: contrast(150%); }
+  .gallery__item:hover .gallery__title {
+    transform: translateY(5px);
+    color: #212529; }
 
 .gallery__thumbnail {
   margin: 0 auto 0.5rem;
-  display: block; }
+  display: block;
+  transition: .3s all; }
 
 .gallery__title {
   text-align: center;
   margin: 0 auto;
   max-width: 150px;
   font-size: 0.875rem;
-  color: #495057; }
+  color: #6c757d;
+  transition: .3s all; }
 
 .gallery__fullimage {
   width: 100%; }
+
+.carousel-interesting-animation .carousel-item {
+  opacity: 0;
+  transition-duration: .6s;
+  transition-property: all; }
+
+.carousel-interesting-animation .carousel-item.active,
+.carousel-interesting-animation .carousel-item-next.carousel-item-left,
+.carousel-interesting-animation .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transform: scale(0.5, 0.25) rotate(33deg); }
+
+.carousel-interesting-animation .active.carousel-item-left,
+.carousel-interesting-animation .active.carousel-item-right {
+  opacity: 0; }
+
+.carousel-interesting-animation .carousel-item-next,
+.carousel-interesting-animation .carousel-item-prev,
+.carousel-interesting-animation .carousel-item.active,
+.carousel-interesting-animation .active.carousel-item-left,
+.carousel-interesting-animation .active.carousel-item-prev {
+  transform: translateX(0); }
+  @supports (transform-style: preserve-3d) {
+    .carousel-interesting-animation .carousel-item-next,
+    .carousel-interesting-animation .carousel-item-prev,
+    .carousel-interesting-animation .carousel-item.active,
+    .carousel-interesting-animation .active.carousel-item-left,
+    .carousel-interesting-animation .active.carousel-item-prev {
+      transform: translate3d(0, 0, 0); } }
