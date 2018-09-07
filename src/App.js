@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {Navbar, NavbarBrand} from 'reactstrap';
 import './utils/app.sass';
+
+import GalleryContainer from './containers/GalleryContainer';
 
 class App extends Component {
   state = { toggle: true };
@@ -8,14 +10,11 @@ class App extends Component {
   render() {
     const { toggle } = this.state;
     return (
-      <div className="container">
-        <div className="App">
-          <header className="App-header">
-            <h1>
-              This app is built with <br />React ⚛️ + Parcel 📦!
-            </h1>
-          </header>
-        </div>
+      <div>
+        <Navbar color="dark" dark>
+          <NavbarBrand href="/">Photo gallery</NavbarBrand>
+        </Navbar>
+        <GalleryContainer/>
       </div>
     );
   }
